@@ -1,0 +1,16 @@
+[package]
+name = "synthoxide"
+version = "0.1.0"
+authors = ["Spookdot <333.333.333@gmx.de>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib", "staticlib"]
+
+[dependencies]
+gdnative = "0.9.3"
+# gdnative = { path = "../../godot-rust/gdnative" }
+fluidlite = "0.2.1"
+fluidlite-lib = "0.1.3"
+cpal = { version = "0.13.4", features = ["jack"] }
+rodio = "0.14.0"

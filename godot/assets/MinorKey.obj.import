@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/MinorKey.obj-c5e5c74e06406043f69b37f3f3054b49.mesh"
+
+[deps]
+
+files=[ "res://.import/MinorKey.obj-c5e5c74e06406043f69b37f3f3054b49.mesh" ]
+
+source_file="res://assets/MinorKey.obj"
+dest_files=[ "res://.import/MinorKey.obj-c5e5c74e06406043f69b37f3f3054b49.mesh", "res://.import/MinorKey.obj-c5e5c74e06406043f69b37f3f3054b49.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

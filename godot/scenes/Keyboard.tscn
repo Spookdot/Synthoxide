@@ -1,0 +1,299 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/Key.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/Keyboard.gd" type="Script" id=2]
+[ext_resource path="res://assets/Keyboard.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://scenes/MinorKey.tscn" type="PackedScene" id=4]
+
+[node name="Keyboard" type="MeshInstance"]
+mesh = ExtResource( 3 )
+material/0 = null
+script = ExtResource( 2 )
+
+[node name="Key0" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 10.6613 )
+
+[node name="Key1" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, 10.4471 )
+
+[node name="Key2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 10.2483 )
+
+[node name="Key3" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, 10.0385 )
+
+[node name="Key4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 9.8438 )
+
+[node name="Key5" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 9.44301 )
+
+[node name="Key6" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, 9.24596 )
+
+[node name="Key7" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 9.04301 )
+
+[node name="Key8" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, 8.83638 )
+
+[node name="Key9" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 8.6462 )
+
+[node name="Key10" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, 8.44142 )
+
+[node name="Key11" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 8.24541 )
+
+[node name="Key12" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 7.84227 )
+
+[node name="Key13" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, 7.62807 )
+
+[node name="Key14" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 7.42927 )
+
+[node name="Key15" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, 7.21947 )
+
+[node name="Key16" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 7.02477 )
+
+[node name="Key17" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 6.62398 )
+
+[node name="Key18" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, 6.42693 )
+
+[node name="Key19" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 6.22398 )
+
+[node name="Key20" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, 6.01735 )
+
+[node name="Key21" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 5.82717 )
+
+[node name="Key22" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, 5.62239 )
+
+[node name="Key23" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 5.42638 )
+
+[node name="Key24" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 5.03059 )
+
+[node name="Key25" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, 4.81639 )
+
+[node name="Key26" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 4.61759 )
+
+[node name="Key27" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, 4.40779 )
+
+[node name="Key28" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 4.21309 )
+
+[node name="Key29" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 3.8123 )
+
+[node name="Key30" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, 3.61525 )
+
+[node name="Key31" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 3.4123 )
+
+[node name="Key32" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, 3.20567 )
+
+[node name="Key33" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 3.01549 )
+
+[node name="Key34" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, 2.81071 )
+
+[node name="Key35" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 2.6147 )
+
+[node name="Key36" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 2.21549 )
+
+[node name="Key37" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, 2.00129 )
+
+[node name="Key38" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 1.80248 )
+
+[node name="Key39" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, 1.59269 )
+
+[node name="Key40" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 1.39798 )
+
+[node name="Key41" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 0.997196 )
+
+[node name="Key42" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, 0.800146 )
+
+[node name="Key43" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 0.597195 )
+
+[node name="Key44" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, 0.390565 )
+
+[node name="Key45" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, 0.200386 )
+
+[node name="Key46" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, -0.00439501 )
+
+[node name="Key47" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -0.200405 )
+
+[node name="Key48" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -0.605862 )
+
+[node name="Key49" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, -0.820062 )
+
+[node name="Key50" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -1.01886 )
+
+[node name="Key51" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, -1.22866 )
+
+[node name="Key52" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -1.42336 )
+
+[node name="Key53" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -1.82415 )
+
+[node name="Key54" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, -2.0212 )
+
+[node name="Key55" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -2.22415 )
+
+[node name="Key56" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, -2.43078 )
+
+[node name="Key57" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -2.62096 )
+
+[node name="Key58" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, -2.82574 )
+
+[node name="Key59" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -3.02175 )
+
+[node name="Key60" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -3.43342 )
+
+[node name="Key61" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, -3.64762 )
+
+[node name="Key62" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -3.84642 )
+
+[node name="Key63" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, -4.05622 )
+
+[node name="Key64" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -4.25092 )
+
+[node name="Key65" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -4.65171 )
+
+[node name="Key66" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, -4.84876 )
+
+[node name="Key67" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -5.05171 )
+
+[node name="Key68" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, -5.25834 )
+
+[node name="Key69" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -5.44852 )
+
+[node name="Key70" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, -5.6533 )
+
+[node name="Key71" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -5.84931 )
+
+[node name="Key72" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -6.25995 )
+
+[node name="Key73" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, -6.47415 )
+
+[node name="Key74" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -6.67295 )
+
+[node name="Key75" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, -6.88275 )
+
+[node name="Key76" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -7.07745 )
+
+[node name="Key77" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -7.47824 )
+
+[node name="Key78" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, -7.67529 )
+
+[node name="Key79" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -7.87824 )
+
+[node name="Key80" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, -8.08488 )
+
+[node name="Key81" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -8.27505 )
+
+[node name="Key82" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, -8.47984 )
+
+[node name="Key83" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -8.67584 )
+
+[node name="Key84" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -9.08255 )
+
+[node name="Key85" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, -9.29675 )
+
+[node name="Key86" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -9.49555 )
+
+[node name="Key87" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, -9.70535 )
+
+[node name="Key88" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -9.90005 )
+
+[node name="Key89" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -10.3008 )
+
+[node name="Key90" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, -10.4979 )
+
+[node name="Key91" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -10.7008 )
+
+[node name="Key92" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, -10.9075 )
+
+[node name="Key93" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -11.0977 )
+
+[node name="Key94" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.648137, 0.547147, -11.3024 )
+
+[node name="Key95" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.970726, 0.342226, -11.4984 )
