@@ -20,4 +20,4 @@ Setup, installation, configuration, etc.
 $ make run
 ```
 ## Contact
-Spookdot <333.333.333@gmx.de>
+Spookdot
