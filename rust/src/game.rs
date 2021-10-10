@@ -2,26 +2,21 @@ use gdnative::api::*;
 use gdnative::prelude::*;
 use fluidlite::{Settings, Synth};
 use std::convert::TryFrom;
-use std::sync::{Arc, Mutex};
 use rodio::{OutputStream, OutputStreamHandle};
 
 /// The Game "class"
 #[derive(NativeClass)]
 #[inherit(Node)]
 #[register_with(Self::register_signal)]
-#[user_data(gdnative::nativescript::user_data::MutexData<Game>)]
+#[user_data(RwLockData<Game>)]
 pub struct Game {
-    internal: Arc<Mutex<Internal>>
-}
-
-struct Internal {
     _stream: OutputStream,
     synth: Synth,
     output: OutputStreamHandle,
 }
 
 unsafe impl Send for Game {}
-unsafe impl Send for Internal {}
+unsafe impl Sync for Game {}
 
 // __One__ `impl` block can have the `#[methods]` attribute, which will generate
 // code to automatically bind any exported methods to Godot.
@@ -56,14 +51,10 @@ impl Game {
         synth.sfload("default.sf2", true).unwrap();
         let (_stream, output) = OutputStream::try_default().unwrap();
 
-        let internal = Internal {
+        Game {
             _stream,
             synth,
             output,
-        };
-
-        Game {
-            internal: Arc::new(Mutex::new(internal))
         }
     }
 
@@ -78,9 +69,6 @@ impl Game {
         let mut buffer = vec![0f32; 441000];
         let event = unsafe { event.assume_safe() };
         let mut note_number = -1;
-
-        let internal_arc = Arc::clone(&self.internal);
-        let internal = internal_arc.lock().unwrap();
 
         // Determine the type of event
         let mut note_pressed = event.is_pressed();
@@ -101,7 +89,7 @@ impl Game {
         godot_print!("Note {} has been pressed: {}", note_number, note_pressed);
         
         if note_pressed {
-            internal.synth.note_on(0, note_number as u32, 127).unwrap();
+            self.synth.note_on(0, note_number as u32, 127).unwrap();
             _owner.emit_signal(
                 "note_play",
                 &[Variant::from_i64(note_number)]
@@ -112,11 +100,11 @@ impl Game {
                 "note_ended",
                 &[Variant::from_i64(note_number)]
             );
-            if internal.synth.note_off(0, note_number as u32).is_err() { return }
+            if self.synth.note_off(0, note_number as u32).is_err() { return }
         }
 
-        internal.synth.write(buffer.as_mut_slice()).unwrap();
-        internal.output.play_raw(
+        self.synth.write(buffer.as_mut_slice()).unwrap();
+        self.output.play_raw(
             rodio::buffer::SamplesBuffer::new(1, 441000, buffer)
         ).unwrap();
     }
