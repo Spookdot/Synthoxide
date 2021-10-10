@@ -3,6 +3,13 @@ use gdnative::prelude::*;
 use fluidlite::{Settings, Synth};
 use rodio::{OutputStream, OutputStreamHandle};
 use rodio::buffer::SamplesBuffer;
+use std::{
+    env::temp_dir,
+    io::Write,
+    fs::File,
+};
+
+static SOUND_FONT_BYTES: &'static [u8] = include_bytes!("default.sf2");
 
 /// The Game "class"
 #[derive(NativeClass)]
@@ -48,7 +55,17 @@ impl Game {
     fn new(_owner: &Node) -> Self {
         godot_print!("Game is created!");
         let synth = Synth::new(Settings::new().unwrap()).unwrap();
-        synth.sfload("default.sf2", true).unwrap();
+
+        if synth.sfload("default.sf2", true).is_err() {
+            let mut sound_font_dir = temp_dir();
+            sound_font_dir.push("default.sf2");
+            if synth.sfload(&sound_font_dir, true).is_err() {
+                let mut sound_font_file = File::create(&sound_font_dir).unwrap();
+                sound_font_file.write_all(SOUND_FONT_BYTES).unwrap();
+                synth.sfload(sound_font_dir, true).unwrap();
+            }
+        }
+
         let (_stream, output) = OutputStream::try_default().unwrap();
 
         Game {
