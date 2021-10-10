@@ -1,8 +1,8 @@
 use gdnative::api::*;
 use gdnative::prelude::*;
 use fluidlite::{Settings, Synth};
-use std::convert::TryFrom;
 use rodio::{OutputStream, OutputStreamHandle};
+use rodio::buffer::SamplesBuffer;
 
 /// The Game "class"
 #[derive(NativeClass)]
@@ -59,53 +59,43 @@ impl Game {
     }
 
     #[export]
-    unsafe fn _ready(&mut self, _owner: &Node) {
+    unsafe fn _ready(&self, _owner: &Node) {
         OS::godot_singleton().open_midi_inputs();
     }
 
     // This function will be called in every frame
     #[export]
     fn _input(&self, _owner: &Node, event: Ref<InputEvent>) {
-        let mut buffer = vec![0f32; 441000];
-        let event = unsafe { event.assume_safe() };
-        let mut note_number = -1;
-
-        // Determine the type of event
-        let mut note_pressed = event.is_pressed();
-
-        // Get the data from the event by casting it into the correct format
         if let Some(event) = event.cast::<InputEventMIDI>() {
-            note_number = event.pitch();
-            note_pressed = event.message() == 9;
-        }
-        else if let Some(event) = event.cast::<InputEventKey>() {
-            note_number = event.scancode();
-        }
+            // Cast the event to TRef<T> for proper usage
+            let event = unsafe { event.assume_safe() };
 
-        // Return if the note_number doesn't meet the requirements
-        if i8::try_from(note_number).is_err() || note_number.is_negative() { return }
+            // Remove all events without velocity as they are not needed
+            if event.velocity() == 0 || event.channel() != 0 { return }
 
+            // Match whether the event is a key pressed, a key released or neither
+            match event.message() {
+                GlobalConstants::MIDI_MESSAGE_NOTE_ON => {
+                    // Prepare variables
+                    let mut buffer = vec![0f32; 44100 * 2];
+                    let sink = rodio::Sink::try_new(&self.output).unwrap();
 
-        godot_print!("Note {} has been pressed: {}", note_number, note_pressed);
-        
-        if note_pressed {
-            self.synth.note_on(0, note_number as u32, 127).unwrap();
-            _owner.emit_signal(
-                "note_play",
-                &[Variant::from_i64(note_number)]
-            );
+                    // Digitially press the key in the synth
+                    self.synth.note_on(0, event.pitch() as u32, event.velocity() as u32).unwrap();
+                    self.synth.write(buffer.as_mut_slice()).unwrap();
+
+                    // Give the sound to the sink and detach it
+                    sink.append(SamplesBuffer::new(2, 44100, buffer));
+                    sink.detach();
+
+                    // Notify the keyboard that a key was pressed
+                    _owner.emit_signal("note_play", &[Variant::from_i64(event.pitch())]);
+                },
+                GlobalConstants::MIDI_MESSAGE_NOTE_OFF => {
+                    _owner.emit_signal("note_ended", &[Variant::from_i64(event.pitch())]);
+                },
+                _ => return
+            }
         }
-        else {
-            _owner.emit_signal(
-                "note_ended",
-                &[Variant::from_i64(note_number)]
-            );
-            if self.synth.note_off(0, note_number as u32).is_err() { return }
-        }
-
-        self.synth.write(buffer.as_mut_slice()).unwrap();
-        self.output.play_raw(
-            rodio::buffer::SamplesBuffer::new(1, 441000, buffer)
-        ).unwrap();
     }
 }
